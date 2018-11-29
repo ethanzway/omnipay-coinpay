@@ -1,0 +1,37 @@
+{
+  "name": "ethanzway/omnipay-coinpay",
+  "type": "library",
+  "description": "Coinpay gateway for Omnipay payment processing library",
+  "keywords": [
+    "coinpay",
+    "gateway",
+    "merchant",
+    "omnipay",
+    "pay",
+    "payment",
+    "purchase"
+  ],
+  "homepage": "https://github.com/ethanzway/omnipay-coinpay",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ethan"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Omnipay\\Coinpay\\": "src/",
+    },
+    "files": [
+      "src/Common/helpers.php"
+    ]
+  },
+  "require": {
+    "omnipay/common": "^3.0",
+    "php-http/guzzle6-adapter": "*"
+  },
+  "require-dev": {
+    "omnipay/tests": "^3.0",
+    "squizlabs/php_codesniffer": "3.*"
+  }
+}
