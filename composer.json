@@ -20,7 +20,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Omnipay\\Coinpay\\": "src/",
+      "Omnipay\\Coinpay\\": "src/"
     },
     "files": [
       "src/Common/helpers.php"
