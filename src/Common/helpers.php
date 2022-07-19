@@ -1,13 +1,5 @@
 <?php
-/**
- * Get an item from an array using "dot" notation.
- *
- * @param  array  $array
- * @param  string $key
- * @param  mixed  $default
- *
- * @return mixed
- */
+
 if (! function_exists('array_get')) {
     function array_get($array, $key, $default = null)
     {
@@ -26,6 +18,7 @@ if (! function_exists('array_get')) {
         return $array;
     }
 }
+
 if (! function_exists('array_has')) {
     function array_has($array, $key)
     {
@@ -44,13 +37,7 @@ if (! function_exists('array_has')) {
         return true;
     }
 }
-/**
- * Return the default value of the given value.
- *
- * @param  mixed $value
- *
- * @return mixed
- */
+
 if (! function_exists('value')) {
     function value($value)
     {

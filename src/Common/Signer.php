@@ -4,11 +4,6 @@ namespace Omnipay\Coinpay\Common;
 
 use Exception;
 
-/**
- * Sign Tool for Coinpay
- * Class Signer
- * @package Omnipay\Coinpay\Common
- */
 class Signer
 {
 
@@ -24,17 +19,12 @@ class Signer
 
     protected $encodePolicy = self::ENCODE_POLICY_QUERY;
 
-    /**
-     * @var array
-     */
     private $params;
-
 
     public function __construct(array $params = [])
     {
         $this->params = $params;
     }
-
 
     public function signWithMD5($key)
     {
@@ -42,7 +32,6 @@ class Signer
 
         return md5($content . $key);
     }
-
 
     public function getContentToSign()
     {
@@ -57,10 +46,6 @@ class Signer
         }
     }
 
-
-    /**
-     * @return mixed
-     */
     public function getParamsToSign()
     {
         $params = $this->params;
@@ -76,10 +61,6 @@ class Signer
         return $params;
     }
 
-
-    /**
-     * @param $params
-     */
     protected function unsetKeys(&$params)
     {
         foreach ($this->getIgnores() as $key) {
@@ -87,21 +68,11 @@ class Signer
         }
     }
 
-
-    /**
-     * @return array
-     */
     public function getIgnores()
     {
         return $this->ignores;
     }
 
-
-    /**
-     * @param array $ignores
-     *
-     * @return $this
-     */
     public function setIgnores($ignores)
     {
         $this->ignores = $ignores;
@@ -115,10 +86,6 @@ class Signer
         return array_filter($params, 'strlen');
     }
 
-
-    /**
-     * @param $params
-     */
     protected function sort(&$params)
     {
         ksort($params);
@@ -159,14 +126,6 @@ class Signer
         return $sign;
     }
 
-
-    /**
-     * Prefix the key path with 'file://'
-     *
-     * @param $key
-     *
-     * @return string
-     */
     private function prefix($key)
     {
         if (strtoupper(substr(PHP_OS, 0, 3)) != 'WIN' && is_file($key) && substr($key, 0, 7) != 'file://') {
@@ -176,15 +135,6 @@ class Signer
         return $key;
     }
 
-
-    /**
-     * Convert key to standard format
-     *
-     * @param $key
-     * @param $type
-     *
-     * @return string
-     */
     public function format($key, $type)
     {
         if (is_file($key)) {
@@ -198,15 +148,6 @@ class Signer
         return $key;
     }
 
-
-    /**
-     * Convert one line key to standard format
-     *
-     * @param $key
-     * @param $type
-     *
-     * @return string
-     */
     public function convertKey($key, $type)
     {
         $lines = [];
@@ -257,12 +198,6 @@ class Signer
         return $result;
     }
 
-
-    /**
-     * @param boolean $sort
-     *
-     * @return Signer
-     */
     public function setSort($sort)
     {
         $this->sort = $sort;
@@ -270,12 +205,6 @@ class Signer
         return $this;
     }
 
-
-    /**
-     * @param int $encodePolicy
-     *
-     * @return Signer
-     */
     public function setEncodePolicy($encodePolicy)
     {
         $this->encodePolicy = $encodePolicy;

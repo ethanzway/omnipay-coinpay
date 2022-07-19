@@ -16,7 +16,7 @@ class Validator
         foreach ($attributes as $attribute) {
             $keys = explode('.', $attribute);
             if (! $this->verify($keys, $array)) {
-                throw new InvalidRequestException("The $attribute parameter is required");
+                throw new InvalidRequestException('The $attribute parameter is required');
             }
         }
     }

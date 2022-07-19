@@ -7,10 +7,6 @@ use Omnipay\Common\Message\AbstractResponse;
 
 class CoinpayCompletePurchaseResponse extends AbstractResponse
 {
-
-    /**
-     * @var CoinpayCompletePurchaseRequest
-     */
     protected $request;
 
     public function getResponseText()

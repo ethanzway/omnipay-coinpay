@@ -9,10 +9,6 @@ use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\ResponseInterface;
 use Omnipay\Common\Exception\InvalidRequestException;
 
-/**
- * Class CoinpayPurchaseRequest
- * @package Omnipay\Coinpay\Requests
- */
 class CoinpayPurchaseRequest extends AbstractRequest
 {
     protected $endpoint;
